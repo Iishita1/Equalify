@@ -1,0 +1,79 @@
+
+/* Create Post Page */
+.create-post {
+    padding: 60px 0;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #6c63ff;
+    outline: none;
+}
+
+.form-group textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-primary {
+    background-color: #6c63ff;
+    color: white;
+    flex: 1;
+}
+
+.btn-primary:hover {
+    background-color: #5a52e0;
+}
+
+.btn-secondary {
+    background-color: #f1f1f1;
+    color: #333;
+    flex: 1;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}

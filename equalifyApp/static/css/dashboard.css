@@ -1,0 +1,134 @@
+
+/* Dashboard Page */
+.dashboard {
+    padding: 60px 0;
+}
+
+.dashboard h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboard-card h2 i {
+    color: #6c63ff;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 6px;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #6c63ff;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.resource-list,
+.post-list,
+.stat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.resource-list li,
+.post-list li,
+.stat-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.resource-list li:last-child,
+.post-list li:last-child,
+.stat-list li:last-child {
+    border-bottom: none;
+}
+
+.resource-list a,
+.post-list a,
+.stat-list a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.resource-list a:hover,
+.post-list a:hover,
+.stat-list a:hover {
+    color: #6c63ff;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #6c63ff;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-right: 8px;
+}
+
+.post-meta,
+.stat-meta {
+    display: block;
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 3px;
+}
+
+.btn-secondary {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: #f1f1f1;
+    color: #333;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}

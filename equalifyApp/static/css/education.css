@@ -1,0 +1,126 @@
+
+/* Education Page */
+.education {
+    padding: 60px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h1 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.category-filter a {
+    padding: 8px 15px;
+    background: #f1f1f1;
+    color: #333;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+
+.category-filter a:hover {
+    background: #e0e0e0;
+}
+
+.category-filter a.active {
+    background: #6c63ff;
+    color: white;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.resource-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.resource-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.category-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #6c63ff;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.resource-header h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 0;
+}
+
+.resource-content {
+    padding: 20px;
+}
+
+.resource-content p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.resource-footer {
+    padding: 15px 20px;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.empty-state {
+    text-align: center;
+    grid-column: 1 / -1;
+    padding: 50px 0;
+    color: #777;
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.empty-state p {
+    font-size: 1.1rem;
+}
