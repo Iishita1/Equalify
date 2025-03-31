@@ -1,0 +1,55 @@
+{% extends "equalifyApp/base.html" %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+<section class="profile">
+    <div class="container">
+        <div class="profile-header">
+            <h1>My Profile</h1>
+            <div class="profile-meta">
+                <span>Member since {{ user.userprofile.join_date|date:"M d, Y" }}</span>
+            </div>
+        </div>
+        
+        <div class="profile-content">
+            <div class="profile-form">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_username">Username</label>
+                        <input type="text" id="id_username" value="{{ user.username }}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="id_email">Email</label>
+                        <input type="email" id="id_email" value="{{ user.email }}" disabled>
+                    </div>
+                    {{ form.gender }}
+                    {{ form.bio }}
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                </form>
+            </div>
+            
+            <div class="profile-stats">
+                <div class="stat-card">
+                    <h3>My Activity</h3>
+                    <div class="stat-item">
+                        <span class="stat-number">{{ user.forumpost_set.count }}</span>
+                        <span class="stat-label">Forum Posts</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">{{ user.comment_set.count }}</span>
+                        <span class="stat-label">Comments</span>
+                    </div>
+                </div>
+                
+                <div class="account-actions">
+                    <h3>Account Actions</h3>
+                    <a href="#" class="btn btn-secondary">Change Password</a>
+                    <a href="#" class="btn btn-danger">Delete Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

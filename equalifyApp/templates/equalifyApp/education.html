@@ -1,0 +1,50 @@
+{% extends "equalifyApp/base.html" %}
+
+{% block title %}Educational Resources{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/static/css/chart.css">
+{% endblock %}
+
+{% block content %}
+<section class="education">
+    <div class="container">
+        <div class="section-header">
+            <h1>Educational Resources</h1>
+            <p>Learn about gender equality issues and solutions across different sectors</p>
+        </div>
+        
+        <div class="category-filter">
+            <a href="{% url 'education' %}" class="{% if not selected_category %}active{% endif %}">All Categories</a>
+            <a href="{% url 'education' %}?category=education" class="{% if selected_category == 'education' %}active{% endif %}">Education Gap</a>
+            <a href="{% url 'education' %}?category=workplace" class="{% if selected_category == 'workplace' %}active{% endif %}">Workplace Equality</a>
+            <a href="{% url 'education' %}?category=leadership" class="{% if selected_category == 'leadership' %}active{% endif %}">Leadership</a>
+            <a href="{% url 'education' %}?category=health" class="{% if selected_category == 'health' %}active{% endif %}">Health</a>
+            <a href="{% url 'education' %}?category=technology" class="{% if selected_category == 'technology' %}active{% endif %}">Technology</a>
+        </div>
+        
+        <div class="resources-grid">
+            {% for resource in resources %}
+            <div class="resource-card">
+                <div class="resource-header">
+                    <span class="category-badge">{{ resource.get_category_display }}</span>
+                    <h3>{{ resource.title }}</h3>
+                </div>
+                <div class="resource-content">
+                    <p>{{ resource.content|truncatewords:30 }}</p>
+                </div>
+                <div class="resource-footer">
+                    <span class="author">By {{ resource.author.username|default:"Admin" }}</span>
+                    <span class="date">{{ resource.created_at|date:"M d, Y" }}</span>
+                </div>
+            </div>
+            {% empty %}
+            <div class="empty-state">
+                <i class="fas fa-book-open"></i>
+                <p>No resources found in this category</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

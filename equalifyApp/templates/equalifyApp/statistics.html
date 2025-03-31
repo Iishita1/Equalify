@@ -1,0 +1,59 @@
+{% extends "equalifyApp/base.html" %}
+
+{% block title %}Gender Statistics{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/static/css/chart.css">
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/static/js/charts.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const statsData = JSON.parse('{{ stats_json|escapejs }}');
+        
+        statsData.forEach(function(stat) {
+            createGenderChart(
+                'chart-' + stat.id,
+                ['Male', 'Female', 'Other'],
+                [stat.male_value || 0, stat.female_value || 0, stat.other_value || 0],
+                stat.title
+            );
+        });
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="statistics">
+    <div class="container">
+        <div class="section-header">
+            <h1>Gender Statistics</h1>
+            <p>Data-driven insights into gender disparities across various sectors</p>
+        </div>
+        
+        <div class="stats-container">
+            {% for stat in stats %}
+            <div class="stat-card">
+                <h3>{{ stat.title }} ({{ stat.year }})</h3>
+                <p>{{ stat.description }}</p>
+                
+                <div class="chart-container">
+                    <canvas id="chart-{{ stat.id }}" class="gender-chart"></canvas>
+                </div>
+                
+                <div class="stat-meta">
+                    <span>Source: {{ stat.source }}</span>
+                </div>
+            </div>
+            {% empty %}
+            <div class="empty-state">
+                <i class="fas fa-chart-bar"></i>
+                <p>No statistics available at the moment</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
